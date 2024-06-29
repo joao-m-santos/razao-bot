@@ -1,3 +1,5 @@
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joao-m-santos/razao-bot/deploy.yml)
+
 # razao-bot
 
 A Discord bot to track who wins more arguments.
