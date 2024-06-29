@@ -27,4 +27,9 @@ This project is built and ran by [Bun](https://bun.sh). Install it on your machi
 
 ### Production
 
-Currently, the bot runs with the same command for both dev and production. There's no point in building such a simple, server-side project.
+1. Run bot for production
+   ```bash
+   bun run prod
+   ```
+
+Currently, the bot runs with the same commands for both dev and production. The only difference is that the `dev` command watches `index.ts`
