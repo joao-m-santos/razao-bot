@@ -31,5 +31,5 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_INSTANCE_USER }}@${{ secrets.EC2_INSTANCE_IP }} << 'EOF'
           cd ~/app
           bun install
-          bun run prod
+          sudo systemctl restart bun-app
           EOF
