@@ -20,21 +20,25 @@ export default class Database {
   }
 
   async connectToDatabase() {
-    const client = new MongoClient(this.#uri, {
-      serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-      },
-    });
-    await client.connect();
+    try {
+      const client = new MongoClient(this.#uri, {
+        serverApi: {
+          version: ServerApiVersion.v1,
+          strict: true,
+          deprecationErrors: true,
+        },
+      });
+      await client.connect();
 
-    console.log('✅ Connected to database');
+      console.log('✅ Connected to database');
 
-    const db = client.db(this.#dbName);
+      const db = client.db(this.#dbName);
 
-    this.cachedClient = client;
-    this.cachedDb = db;
+      this.cachedClient = client;
+      this.cachedDb = db;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async registerPoint(recipient: Snowflake, loggedBy: Snowflake) {
