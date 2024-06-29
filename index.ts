@@ -50,9 +50,13 @@ try {
   }
 
   client.database = new Database();
+
+  console.log('<> Connecting to database...');
   await client.database.connectToDatabase();
+  console.log('<> Connected to database');
 
   // Log in to Discord with your client's token
+  console.log('<> Logging in to Discord...');
   client.login(token);
 } catch (error) {
   console.error(error);
