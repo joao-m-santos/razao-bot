@@ -2,8 +2,8 @@ module.exports = {
   apps: [
     {
       name: 'razao-bot',
-      script: 'run prod',
-      interpreter: 'bun',
+      script: 'bun run prod',
+      interpreter: 'none',
       instances: 1,
       exec_mode: 'fork',
       watch: false,
